@@ -32,8 +32,17 @@ object EmployeeRepo : DataRepo {
 
     }
 
-    fun deleteEmployee(employee: Employee){
+    fun delete(employee: Employee) {
         tempEmployeeList.remove(employee)
+        reload()
+    }
+
+    fun swap(employee1: Employee, employee2: Employee) {
+        val index1 = tempEmployeeList.indexOf(employee1)
+        val index2 = tempEmployeeList.indexOf(employee2)
+        if (index1 == -1 || index2 == -1) return
+        tempEmployeeList[index2] = employee1
+        tempEmployeeList[index1] = employee2
         reload()
     }
 
