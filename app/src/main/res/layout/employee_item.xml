@@ -8,7 +8,7 @@
                 name="employee"
                 type="ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.common.Employee"/>
         <variable name="model"
-                  type="ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.EmployeeViewModel"/>
+                  type="ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.empoyees_list.EmployeeViewModel"/>
 
     </data>
 

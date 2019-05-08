@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="model"
-                  type="ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.EmployeeViewModel"/>
+                  type="ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.empoyees_list.EmployeeViewModel"/>
     </data>
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/employeeListRV"
@@ -13,7 +12,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            tools:context=".features.RecyclerFragment"
+            tools:context=".features.empoyees_list.RecyclerFragment"
             tools:listitem="@layout/employee_item"
             tools:itemCount="19"/>
 </layout>

@@ -9,7 +9,7 @@
     <fragment
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:name="ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.RecyclerFragment"
+            android:name="ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.empoyees_list.RecyclerFragment"
             android:id="@+id/fragment"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
