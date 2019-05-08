@@ -9,8 +9,7 @@ import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.databinding.Employ
 import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.empoyees_list.EmployeeViewModel
 
 class EmployeeAdapter(
-    private val employeeViewModel: EmployeeViewModel,
-    private var onItemClickListener: OnItemClickListener
+    private val employeeViewModel: EmployeeViewModel
 ) : RecyclerView.Adapter<EmployeeHolder>() {
 
     private val itemsList = mutableListOf<Employee>()
@@ -28,7 +27,6 @@ class EmployeeAdapter(
         holder.bind(item)
         holder.itemView.setOnClickListener { v ->
             employeeViewModel.onItemClick(v.context, item)
-            //onItemClickListener.onItemClicked(item)
         }
     }
 
@@ -44,10 +42,5 @@ class EmployeeAdapter(
         itemsList.clear()
         itemsList.addAll(newItems)
         diffResult.dispatchUpdatesTo(this)
-    }
-
-
-    interface OnItemClickListener {
-        fun onItemClicked(employee: Employee)
     }
 }

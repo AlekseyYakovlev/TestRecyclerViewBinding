@@ -10,14 +10,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.*
 import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.R
-import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.common.Employee
 import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.databinding.FragmentRecyclerBinding
 import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.empoyees_list.views.EmployeeAdapter
 import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.empoyees_list.views.EmployeeHolder
 
 
-class RecyclerFragment : Fragment(),
-    EmployeeAdapter.OnItemClickListener {
+class RecyclerFragment : Fragment() {
 
     private val defaultColumnCount = 2
 
@@ -44,7 +42,7 @@ class RecyclerFragment : Fragment(),
 
     private fun configureRecyclerView() {
         val columnCount = (activity?.resources?.getInteger(R.integer.column_count)) ?: defaultColumnCount
-        val employeeAdapter = EmployeeAdapter(viewModel, this@RecyclerFragment)
+        val employeeAdapter = EmployeeAdapter(viewModel)
 
         viewModel.employeeList.observe(
             this@RecyclerFragment, Observer { list -> employeeAdapter.updateData(list) })
@@ -96,8 +94,4 @@ class RecyclerFragment : Fragment(),
                 viewModel.onItemSwiped(this@RecyclerFragment.context, item)
             }
         }
-
-    override fun onItemClicked(employee: Employee) {
-        viewModel.onItemClick(this.context, employee)
-    }
 }
