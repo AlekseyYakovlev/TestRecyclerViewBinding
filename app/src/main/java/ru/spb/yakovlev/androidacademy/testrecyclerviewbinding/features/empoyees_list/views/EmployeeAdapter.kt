@@ -8,6 +8,7 @@ import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.common.Employee
 import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.databinding.EmployeeItemBinding
 import ru.spb.yakovlev.androidacademy.testrecyclerviewbinding.features.empoyees_list.EmployeeViewModel
 
+//TODO: Modify to use generics
 class EmployeeAdapter(
     private val employeeViewModel: EmployeeViewModel
 ) : RecyclerView.Adapter<EmployeeHolder>() {
@@ -17,9 +18,7 @@ class EmployeeAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmployeeHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = EmployeeItemBinding.inflate(inflater, parent, false)
-        return EmployeeHolder(
-            binding
-        )
+        return EmployeeHolder(binding)
     }
 
     override fun onBindViewHolder(holder: EmployeeHolder, position: Int) {
@@ -33,11 +32,7 @@ class EmployeeAdapter(
     override fun getItemCount() = itemsList.size
 
     fun updateData(newItems: List<Employee>) {
-        val diffCallback =
-            EmployeeItemDiffCallback(
-                itemsList,
-                newItems
-            )
+        val diffCallback = EmployeeItemDiffCallback(itemsList, newItems)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
         itemsList.clear()
         itemsList.addAll(newItems)
